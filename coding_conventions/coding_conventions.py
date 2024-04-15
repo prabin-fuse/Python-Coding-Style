@@ -72,3 +72,15 @@ def update_student(identifier, key, value):
         return "Student not found."
 
 
+### Inference examples:
+add_student(1, "Prabin", 24, "A+")
+add_student(2, "Raju", 22, "B+")
+
+
+print(search_student(1)) 
+print(search_student("Raju"))  
+
+print(update_student(1, "age", 21)) 
+print(update_student("Prabin", "grade", "A+"))  
+
+print(search_student(1))  
