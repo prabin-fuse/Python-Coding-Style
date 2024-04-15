@@ -1,0 +1,119 @@
+PEP 8 => Style Guide for Python Code
+1) Any line cannot exceed the 80 characters in python
+ => use formatter(black prefered) or split lines
+2) Indentation => 4 spaces
+3) Naming convetions:
+for variables:
+snake_case(hello_world) Yes
+cammelCase(helloWorld) No
+PascalCase(HelloWorld) No
+
+for constants: (snake case and all caps)
+HELLO_WORLD, COLOR, BG_COLOR
+eg. COLOR = (255, 15, 255)
+
+for modules: (all in lower case similar to variables)
+for functions: (same as variable:)
+for classes: (Pascal Case)
+- class BaseClass:
+for exceptions (Pascal case; it is class in python)
+- class XException:
+
+for parameters:  (self, cls)
+- class Test:
+    def test(self):
+        pass
+
+    @classmethod
+    def cls_method(cls):
+        pass
+
+4)function and class spacing:
+- separate two classes by two blank lines:
+- method in class are spaced by one blank lines:
+eg:
+- class Test:
+    pass
+
+
+ class Foo:
+    def __init__(self):
+        pass
+
+    def test(self):
+        pass
+
+5) Imports:
+- Always the top at the file except module docs string.
+- after impors, global variables, constants, top level functions and classes
+- donot import two or more distinct imports on same line
+- excepton: but from import can be in same line
+- do not use wildcard import (*)
+
+import os, sys (wrong)
+import os
+import sys (right)
+
+from os import path, stat (right)
+
+6) Single or double quotations ()
+- both are equivalents
+- always use same
+- wrap the " or ' by opposite quote. (But sometimes can be used by escape character \)
+- When using tripple quote, always use " (e.g: """ """)
+
+7) Whitespaces:
+# correct
+space(players[1], {age: 45})
+# incorrect:
+space ( players[ 1 ], { age: 45})
+
+# correct
+foo = (0,) , add(1,5)
+foo = (0, ) , add (1,5) # incorrect
+
+# correct
+i = i + 1
+c = (a+b) * (a-b) # showing precedence of operators
+# incorrect:
+c = (a + b) * (a - b) #
+
+# correct 
+def complex(real, imag=0.1)
+    return magic(r=real, i=imag)
+# wrong
+def complex(real, imag = 0.1):
+    return magic(r = real, i = imag)
+
+8) Inline comments:
+- atlease two spaces before #
+- Start with caps:
+- one space after #
+# correct
+COLOR = (0, 255, 155)  # This is color
+# Wrong
+COLOR = (0, 255, 0) #this is color
+
+9) is none or ==none:
+if x is None  # Correct 
+if x == None  # Not correct
+
+# correct:
+if foo is not "x":
+
+# Incorrect:
+if not foo is "x":
+
+10) Try and Except:
+- except the specific exception. Do not do empty exception:
+
+11) String prefix and suffix:
+- use startswith, endswith rather than slicing.
+- Why?
+# Correct
+if foo.startswith("bar"):
+    pass
+
+# Wrong:
+if fool[:3] == "bar":
+    pass
